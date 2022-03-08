@@ -1,0 +1,17 @@
+body {
+    background-color: cornsilk;
+}
+
+#board {
+    display: grid;
+    margin: auto;
+    margin-top: 25px;
+    height: 700px;
+    width: 700px;
+    background-color: white;
+    grid-template-columns: repeat(16, 1fr);
+}
+
+#board > div {
+    border: 1px solid black;
+}
