@@ -2,10 +2,15 @@ body {
     background-color: cornsilk;
 }
 
+#ui {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+}
+
 #board {
     display: grid;
-    margin: auto;
-    margin-top: 25px;
     height: 700px;
     width: 700px;
     background-color: white;
@@ -14,4 +19,16 @@ body {
 
 #board > div {
     border: 1px solid black;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 700px;
+    padding-top: 25px;
+}
+
+#buttons > button {
+    width: 150px;
+    height: 50px;
 }
