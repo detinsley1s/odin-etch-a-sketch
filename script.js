@@ -17,4 +17,9 @@ function createGrid() {
     }
 }
 
+const clearButton = document.querySelector('#clear');
+clearButton.addEventListener('click', () => {
+    createGrid();
+});
+
 createGrid();
