@@ -9,8 +9,15 @@ function createGrid() {
     for (let i = 0; i < gridsize*gridsize; ++i) {
         let div = document.createElement('div');
         div.addEventListener('mouseover', (e) => {
-            if (e.buttons == 1) {
-                div.style.backgroundColor = 'black';
+            if (!div.style.backgroundColor) {
+                if (e.buttons == 1) {
+                    div.style.backgroundColor = 'black';
+                }
+                else if (e.buttons === 4) {
+                    div.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)},
+                        ${Math.floor(Math.random() * 255)},
+                        ${Math.floor(Math.random() * 255)})`;
+                }
             }
         });
         board.appendChild(div);
