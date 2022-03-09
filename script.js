@@ -1,11 +1,12 @@
 const board = document.querySelector('#board');
+let gridsize = 16;
 
-function createGrid(size) {
+function createGrid() {
     while (board.hasChildNodes()) {
         board.removeChild(board.firstChild);
     }
 
-    for (let i = 0; i < size*size; ++i) {
+    for (let i = 0; i < gridsize*gridsize; ++i) {
         let div = document.createElement('div');
         div.addEventListener('mouseover', (e) => {
             if (e.buttons == 1) {
@@ -16,4 +17,4 @@ function createGrid(size) {
     }
 }
 
-createGrid(16);
+createGrid();
