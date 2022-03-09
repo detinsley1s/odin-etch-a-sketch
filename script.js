@@ -32,13 +32,14 @@ clearButton.addEventListener('click', () => {
 const resizeGrid = document.querySelector('#changedims');
 resizeGrid.addEventListener('click', () => {
     let newSize = 0;
-    while (newSize < 16 || newSize > 100) {
+    while (!newSize || newSize < 16 || newSize > 100) {
         newSize = prompt('How many squares per side? (16-100)');
         if (newSize === null) {
             return;
         }
-        if (newSize < 16 || newSize > 100) {
-            alert('The size must be between 16 to 100!');
+        newSize = Number(newSize);
+        if (!newSize || newSize < 16 || newSize > 100) {
+            alert('The size must be a number between 16 to 100!');
         }
     }
     gridsize = newSize;
