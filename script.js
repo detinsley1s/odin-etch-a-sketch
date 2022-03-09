@@ -22,4 +22,22 @@ clearButton.addEventListener('click', () => {
     createGrid();
 });
 
+const resizeGrid = document.querySelector('#changedims');
+resizeGrid.addEventListener('click', () => {
+    let newSize = 0;
+    while (newSize < 16 || newSize > 100) {
+        newSize = prompt('How many squares per side? (16-100)');
+        if (newSize === null) {
+            return;
+        }
+        if (newSize < 16 || newSize > 100) {
+            alert('The size must be between 16 to 100!');
+        }
+    }
+    gridsize = newSize;
+    let root = document.querySelector(':root');
+    root.style.setProperty('--griddims', gridsize);
+    createGrid();
+});
+
 createGrid();
